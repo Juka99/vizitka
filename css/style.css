@@ -1,0 +1,1508 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+}
+
+/* Promenljive za  flex */
+/* Kraj promenljivih za flex */
+/* Promenljive za responsive */
+/* Stilizovanje strelice za back to top */
+.arrowUp {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  z-index: 999;
+  bottom: 1.5%;
+  right: 1.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.arrowUp a {
+  text-decoration: none;
+  color: #5cb9dd;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+.arrowUp a:hover {
+  -webkit-transform: translateY(-10px);
+          -ms-transform: translateY(-10px);
+      transform: translateY(-10px);
+  color: aqua;
+}
+
+.arrowUp a i {
+  font-weight: bold;
+  font-size: 3em;
+}
+
+/*Stilizujem ikonicu za telefon na malim ekranima */
+body .callMeNow {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  z-index: 999;
+  right: 5%;
+  top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+body .callMeUs {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 999;
+  right: 5%;
+  top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+@media (max-width: 992px) {
+  body .callMeNow {
+    display: block;
+  }
+}
+
+body .callMeNow a {
+  width: 100%;
+  height: 100%;
+  color: #42e0ac;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s;
+  text-decoration: none;
+}
+
+body .callMeNow a:hover {
+  color: #84ebc9;
+}
+
+body .callMeNow a i {
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+/* Stilizovanje navigacije */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  /*Ovde sam zavrsio glavnu navigaciju, sad pocinjem sidenav */
+}
+
+body nav {
+  max-width: 100%;
+  position: fixed;
+  top: 0px;
+  height: 130px;
+  background-color: #0083B0;
+  z-index: 999;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+
+@media (max-width: 1200px) {
+  body nav .nav1 {
+    width: 100%;
+  }
+}
+body nav .nav1 .telefon a {
+   background-color: #007bff;
+   color:whitesmoke;
+}
+
+body nav .nav1 .telefon a:after {
+  content: none;
+}
+body nav .nav1 .socialIcon a:hover {
+  color: #00B4DB;
+}
+
+body nav .nav1 .socialIcon a:after {
+  content: none;
+}
+
+body nav .nav1 .mainLogo {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 2%;
+}
+
+@media (max-width: 992px) {
+  body nav .nav1 .mainLogo {
+    margin-left: 0px;
+  }
+}
+
+body nav .nav1 .mainLogo img {
+  width: 100px;
+  max-width: 100%;
+  height: auto;
+}
+
+body nav .nav1 .burgerIcon {
+  color: whitesmoke;
+  height: 100%;
+  /* Iz nekog razloga se burger meni vidi i na vecim ekranima kada mu deklarisem flex
+
+                display: $f;
+                justify-content: $c;
+                align-items: $c;
+
+                */
+}
+
+@media (max-width: 992px) {
+  body nav .nav1 .burgerIcon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+body nav .nav1 ul {
+  list-style-type: none;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 2%;
+  width: 55%;
+}
+
+@media (max-width: 1600px) {
+  body nav .nav1 ul {
+    width: 85%;
+  }
+}
+
+
+
+body nav .nav1 ul li {
+  margin: 0% 2%;
+}
+
+body nav .nav1 ul li a {
+  font-size: 1.15em;
+  text-decoration: none;
+  position: relative;
+  -webkit-transition: .7s;
+  -o-transition: .7s;
+  transition: .7s;
+}
+
+@media (max-width: 1200px) {
+  body nav .nav1 ul li a{
+    font-size: 1em;
+  }
+}
+
+body nav .nav1 ul li a:after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 3px;
+  background: #00B4DB;
+  bottom: 10px;
+  left: 15px;
+  -webkit-transition: .7s;
+  -o-transition: .7s;
+  transition: .7s;
+}
+
+body nav .nav1 ul li a:hover:after {
+  width: 60%;
+}
+
+body nav .nav1 ul li a:hover {
+  background: none;
+  color: #fff;
+}
+
+body .sidenav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #0083B0;
+  padding-top: 5%;
+}
+
+body .sidenav .socialIconSide .fab {
+  color: whitesmoke;
+  text-align: center;
+  margin: inherit;
+  font-size: 30px;
+}
+
+body .sidenav .sideLogo {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 15%;
+}
+
+body .sidenav .sideLogo img {
+  width: 100px;
+  max-width: 100%;
+  height: auto;
+}
+
+body .sidenav li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Kraj navigacije */
+/* Ovde krecem da pravim main deo sa 100vh */
+body main {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/cover.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body main .fading {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 131, 176, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .fading .contMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+body main .fading .contMain .rowMain .colMain {
+  padding-top:15%;
+}
+body main .fading .contMain .rowMain .colMain h1 {
+  color: whitesmoke;
+  font-size: 2.5em;
+}
+
+@media (max-width: 480px) {
+  body main .fading .contMain .rowMain .colMain h1 {
+    font-size: 2.5em;
+  }
+}
+
+body main .fading .contMain .rowMain .colMain h2 {
+  color: whitesmoke;
+  font-size: 2.5em;
+  padding: 3% 0%;
+}
+
+@media (max-width: 480px) {
+  body main .fading .contMain .rowMain .colMain h2 {
+    font-size: 1.5em;
+  }
+}
+
+body main .fading .contMain .rowMain .colMain p {
+  color: whitesmoke;
+  font-size: 1.4em;
+  padding-bottom: 4%;
+}
+
+@media (max-width: 480px) {
+  body main .fading .contMain .rowMain .colMain p {
+    font-size: 1.2em;
+  }
+}
+
+body main .fading .contMain .rowMain .colMain p span {
+  color: rgb(225, 253, 68);
+  font-weight: bold;
+}
+
+body main .fading .contMain .rowMain .colMain p #specSpan {
+  font-weight: bold;
+  color: rgb(255, 255, 255) !important;
+  font-size: 1.2em;
+}
+
+
+body main .fading .contMain .rowMain .colMain a .up {
+  color: whitesmoke;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s;
+  border-radius: 20px;
+  background: transparent;
+  border: 3px solid whitesmoke;
+  height: 50px;
+  font-weight: bold;
+  width: 100%;
+}
+
+body main .fading .contMain .rowMain .colMain .holdVisit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+@keyframes mover{
+  0%{transform: translateX(3000px);}
+  20%{transform: rotateX(0deg);}
+  30%{transform: rotateX(180deg);}
+  45%{transform: rotateX(360deg); transform: scale(1.2);}
+  50%{transform: translateX(0);}
+}
+
+body main .fading .contMain .rowMain .colMain .holdVisit img{
+  max-width: 100%;
+  height: auto;
+  width: 350px;
+  animation: mover 12s;
+}
+
+@media (max-width: 480px) {
+  body main .fading .contMain .rowMain .colMain .up {
+    width: 60%;
+  }
+}
+
+body main .fading .contMain .rowMain .colMain a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+}
+
+body main .fading .contMain .rowMain .colMain .up:hover, body main .fading .contMain .rowMain .colMain .up:focus {
+  border-color: whitesmoke;
+  color: #fff;
+  -webkit-box-shadow: inset 0 -3.25em 0 0 #00B4DB;
+          box-shadow: inset 0 -3.25em 0 0 #00B4DB;
+}
+
+/* Ovde pocinjem O Nama sekciju */
+body .onamaFluid {
+  background: -o-linear-gradient(top, #00B4DB, #0083B0);
+  background: -webkit-gradient(linear, left top, left bottom, from(#00B4DB), to(#0083B0));
+  background: linear-gradient(top, #00B4DB, #0083B0);
+  padding: 5% 0%;
+}
+
+body .onamaFluid .contOnama h2 {
+  text-align: center;
+  color: whitesmoke;
+  padding-bottom: 4%;
+  font-size: 2.5em;
+}
+
+body .onamaFluid .contOnama p {
+  color: whitesmoke;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  body .onamaFluid .contOnama p {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+/*Ovo je kraj O Nama dela, krecem  usluge */
+body .usluge {
+  padding: 5% 0%;
+}
+
+body .usluge h3 {
+  text-align: center;
+  color: #006378;
+  font-size: 2.5em;
+}
+
+body .usluge h3 label {
+  font-size: 1em;
+  color: #006378;
+  border-bottom: 3px solid #006378;
+  padding-bottom: .5%;
+}
+
+body .usluge .contUsluge {
+  margin-top: 4%;
+}
+
+@media (max-width: 992px) {
+  body .usluge .contUsluge .rowUsluge {
+    margin-bottom: 0px;
+  }
+}
+
+body .usluge .contUsluge .rowUsluge .colUsluge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 992px) {
+  body .usluge .contUsluge .rowUsluge .colUsluge {
+    margin: 10px auto;
+  }
+}
+
+body .usluge .contUsluge .rowUsluge .colUsluge .ikonica {
+  margin-bottom: 3%;
+}
+
+body .usluge .contUsluge .rowUsluge .colUsluge .textUsluge {
+  text-align: center;
+  padding-bottom: 3%;
+}
+
+body .usluge .contUsluge .rowUsluge .colUsluge .textUsluge h4 {
+  color: #0083B0;
+}
+
+body .usluge .contUsluge .rowUsluge .colUsluge .textUsluge .down {
+  padding-bottom: 10px;
+}
+
+body .usluge .contUsluge .rowUsluge .colUsluge .textUsluge .up {
+  color: whitesmoke;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s;
+  border-radius: 20px;
+  width: 50%;
+  padding: 2% 0%;
+  background: #0083B0;
+  border: 3px solid whitesmoke;
+}
+
+@media (max-width: 480px) {
+  body .usluge .contUsluge .rowUsluge .colUsluge .textUsluge .up {
+    width: 60%;
+  }
+}
+
+body .usluge .contUsluge .rowUsluge .colUsluge .textUsluge .up a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body .usluge .contUsluge .rowUsluge .colUsluge .textUsluge .up:hover, body .usluge .contUsluge .rowUsluge .colUsluge .textUsluge .up:focus {
+  border-color: whitesmoke;
+  color: #fff;
+  -webkit-box-shadow: inset 0 -3.25em 0 0 #00B4DB;
+          box-shadow: inset 0 -3.25em 0 0 #00B4DB;
+}
+
+/* Ovde zavrsavam usluge i pocinjem Zasto Bas Mi */
+body .fluidZasto {
+  background: -o-linear-gradient(top, #00B4DB, #0083B0);
+  background: -webkit-gradient(linear, left top, left bottom, from(#00B4DB), to(#0083B0));
+  background: linear-gradient(top, #00B4DB, #0083B0);
+  padding: 5% 0%;
+  /*background: linear-gradient(to bottom, #2193b0, #6dd5ed);*/
+}
+
+body .fluidZasto h3 {
+  text-align: center;
+  color: whitesmoke;
+  font-size: 2.5em;
+}
+
+body .fluidZasto h3 label {
+  font-size: 1em;
+  color: whitesmoke;
+  border-bottom: 3px solid whitesmoke;
+  padding-bottom: .5%;
+}
+
+body .fluidZasto .contZasto {
+  margin: 4% auto;
+}
+
+body .fluidZasto .contZasto .rowZasto .colZasto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .fluidZasto .contZasto .rowZasto .colZasto:first-child {
+  border-right: 2px solid whitesmoke;
+}
+
+@media (max-width: 768px) {
+  body .fluidZasto .contZasto .rowZasto .colZasto:first-child {
+    border: none;
+    border-bottom: 2px solid whitesmoke;
+    margin-bottom: 3%;
+  }
+}
+
+body .fluidZasto .contZasto .rowZasto p {
+  text-align: center;
+  color: whitesmoke;
+  font-size: 1.3em;
+}
+
+@media (max-width: 576px) {
+  body .fluidZasto .contZasto .rowZasto p {
+    font-size: 1.1em;
+  }
+}
+
+body .fluidZasto .contZasto .rowZasto p label {
+  font-weight: bold;
+  font-size: 1em;
+  color: whitesmoke;
+}
+
+body .fluidZasto .contZasto .rowZasto .zastoPar {
+  padding: 1.5% 3% 0% 1.5%;
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  body .fluidZasto .contZasto .rowZasto .zastoPar {
+    font-size: .9em;
+    line-height: 25px;
+  }
+}
+
+body .fluidZasto .up {
+  color: whitesmoke;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  background: transparent;
+  border: 3px solid whitesmoke;
+  border-radius: 20px;
+  display: block;
+  margin: 0% auto;
+  width: 20%;
+  padding: 1% 0%;
+}
+
+@media (max-width: 576px) {
+  body .fluidZasto .up {
+    width: 30%;
+  }
+}
+
+@media (max-width: 480px) {
+  body .fluidZasto .up {
+    width: 45%;
+  }
+}
+
+body .fluidZasto .up a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+body .fluidZasto .up:hover, body .fluidZasto .up:focus {
+  border-color: whitesmoke;
+  color: #fff;
+  -webkit-box-shadow: inset 0 -3.25em 0 0 #00B4DB;
+          box-shadow: inset 0 -3.25em 0 0 #00B4DB;
+}
+
+/* Ovde zavrsavam Zasto Bas Mi, pocinjem formu */
+/*STA KAZU O NAMA*/
+body .contTestimonial .rowTestimonial h3 {
+  text-align: center;
+  color: #006378;
+  font-size: 2.5em;
+  margin-top: 5% !important;
+}
+
+body .contTestimonial .rowTestimonial h3 label {
+  font-size: 1em;
+  color: #006378;
+  border-bottom: 3px solid #006378;
+  padding-bottom: .5%;
+}
+
+body .contTestimonial .rowTestimonial .colTestimonial {
+  margin: 5% 0% 5% 0%;
+}
+
+body .contTestimonial .rowTestimonial .colTestimonial .owl {
+  text-align: center;
+}
+
+body .contTestimonial .rowTestimonial .colTestimonial .owl .item {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+body .contTestimonial .rowTestimonial .colTestimonial .owl .item h4 {
+  color: #006378;
+}
+
+body .contTestimonial .rowTestimonial .colTestimonial .owl .item blockquote {
+  border-left: 2px solid #006378;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+
+body .contTestimonial .rowTestimonial .colTestimonial .owl .item blockquote:before {
+  color: #006378;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+body .contTestimonial .rowTestimonial .colTestimonial .owl .item blockquote p {
+  display: inline;
+  font-size: 1.3em;
+}
+
+@media (max-width: 480px) {
+  body .contTestimonial .rowTestimonial .colTestimonial .owl .item blockquote p {
+    font-size: 1.1em;
+  }
+}
+
+body .contTestimonial .rowTestimonial .colTestimonial .owl .owl-nav {
+  display: none;
+}
+
+/*STA KAZU O NAMA END*/
+/*POVERENJE SU NAM POKLONILI*/
+body .contPoverenje {
+  background: -o-linear-gradient(top, #00B4DB, #0083B0);
+  background: -webkit-gradient(linear, left top, left bottom, from(#00B4DB), to(#0083B0));
+  background: linear-gradient(top, #00B4DB, #0083B0);
+}
+
+body .contPoverenje .rowPoverenje {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .contPoverenje .rowPoverenje h3 {
+  color: whitesmoke;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  body .contPoverenje .rowPoverenje h3 {
+    font-size: 2em;
+  }
+}
+
+body .contPoverenje .rowPoverenje h3 label {
+  color: whitesmoke;
+  border-bottom: 3px solid whitesmoke;
+}
+
+@media (max-width: 380px) {
+  body .contPoverenje .rowPoverenje h3 label {
+    padding-bottom: 3%;
+  }
+}
+
+body .contPoverenje .rowPoverenje p {
+  text-align: center;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+body .contPoverenje .rowPoverenje .colPoverenje .owl .item figure {
+  max-width: 100%;
+}
+
+body .contPoverenje .rowPoverenje .colPoverenje .owl .item figure img {
+  width: 200px;
+  margin: 0px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+body .contPoverenje .rowPoverenje .colPoverenje .owl .item h4 {
+  color: whitesmoke;
+}
+
+/*POVERENJE SU NAM POKLONILI END*/
+/*NASI PARTNERI*/
+body {
+  max-width: 100%;
+}
+
+body .contPartneri .rowPartneri .colPartneri .owl .item figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .contPartneri .rowPartneri .colPartneri .owl .item figure img {
+  width: 30%;
+}
+
+body .contPartneri .rowPartneri .colPartneri .owl .item figure .bigOne {
+  height: 120px;
+  width: 120px;
+}
+
+body .contPartneri .rowPartneri .colPartneri .owl .item figure .bigOneNew {
+  height: 120px;
+  width: 200px;
+}
+
+body .contPartneri .rowPartneri .colPartneri .owl .item figure .blurOne {
+  width: 250px;
+}
+
+/*NASI PARTNERI END*/
+/* Stilizovanje Kontakta */
+body .fluidKontakt {
+  padding: 5% 0%;
+}
+
+body .fluidKontakt h3 {
+  text-align: center;
+  color: #006378;
+  font-size: 2.5em;
+  margin-bottom: 4%;
+}
+
+body .fluidKontakt h3 label {
+  font-size: 1em;
+  color: #006378;
+  border-bottom: 2px solid #006378;
+  padding-bottom: .5%;
+}
+
+@media (max-width: 576px) {
+  body .fluidKontakt .contKontakt form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  body .fluidKontakt .contKontakt form .rowKontakt {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt {
+  /*Menjanje boja forme i button-a*/
+  /*Label color*/
+  /*Label focus color text*/
+  /*color text underline*/
+  /*focus color text underline*/
+  /*Valid text color*/
+  /* invalid color text*/
+  /*Label focus color telefon*/
+  /*color tel underline*/
+  /*focus color telefon underline*/
+  /*Valid telefon color*/
+  /* invalid color telefon*/
+  /*Label focus color email*/
+  /*color email underline*/
+  /*focus color email underline*/
+  /*Valid email color*/
+  /* invalid color email*/
+  /*textarea*/
+  /*focus color textarea underline*/
+  /*Label focus color textarea*/
+  /*icon color*/
+  /*icon focus color*/
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field label {
+  color: #00738C;
+  font-weight: 600;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=text]:focus + label {
+  color: #0083B0;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=text] {
+  border-bottom: 1px solid #00738C;
+  -webkit-box-shadow: 0 1px 0 0 #00738C;
+          box-shadow: 0 1px 0 0 #00738C;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=text]:focus {
+  border-bottom: 1px solid #0083B0;
+  -webkit-box-shadow: 0 1px 0 0 #0083B0;
+          box-shadow: 0 1px 0 0 #0083B0;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=text].valid {
+  border-bottom: 1px solid #8CD6AB;
+  -webkit-box-shadow: 0 1px 0 0 #8CD6AB;
+          box-shadow: 0 1px 0 0 #8CD6AB;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=text].invalid {
+  border-bottom: 1px solid #006378;
+  -webkit-box-shadow: 0 1px 0 0 #006378;
+          box-shadow: 0 1px 0 0 #006378;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=tel]:focus + label {
+  color: #0083B0;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=tel] {
+  border-bottom: 1px solid #006378;
+  -webkit-box-shadow: 0 1px 0 0 #006378;
+          box-shadow: 0 1px 0 0 #006378;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=tel]:focus {
+  border-bottom: 1px solid #0083B0;
+  -webkit-box-shadow: 0 1px 0 0 #0083B0;
+          box-shadow: 0 1px 0 0 #0083B0;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=tel].valid {
+  border-bottom: 1px solid #8CD6AB;
+  -webkit-box-shadow: 0 1px 0 0 #8CD6AB;
+          box-shadow: 0 1px 0 0 #8CD6AB;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=tel].invalid {
+  border-bottom: 1px solid #006378;
+  -webkit-box-shadow: 0 1px 0 0 #006378;
+          box-shadow: 0 1px 0 0 #006378;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=email]:focus + label {
+  color: #0083B0;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=email] {
+  border-bottom: 1px solid #006378;
+  -webkit-box-shadow: 0 1px 0 0 #006378;
+          box-shadow: 0 1px 0 0 #006378;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=email]:focus {
+  border-bottom: 1px solid #0083B0;
+  -webkit-box-shadow: 0 1px 0 0 #0083B0;
+          box-shadow: 0 1px 0 0 #0083B0;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=email].valid {
+  border-bottom: 1px solid #8CD6AB;
+  -webkit-box-shadow: 0 1px 0 0 #8CD6AB;
+          box-shadow: 0 1px 0 0 #8CD6AB;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field input[type=email].invalid {
+  border-bottom: 1px solid #006378;
+  -webkit-box-shadow: 0 1px 0 0 #006378;
+          box-shadow: 0 1px 0 0 #006378;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field textarea:focus {
+  border-bottom: 1px solid #0083B0;
+  -webkit-box-shadow: 0 1px 0 0 #0083B0;
+          box-shadow: 0 1px 0 0 #0083B0;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field textarea {
+  border-bottom: 1px solid #006378;
+  -webkit-box-shadow: 0 1px 0 0 #006378;
+          box-shadow: 0 1px 0 0 #006378;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field textarea:focus + label {
+  color: #0083B0;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field .prefix {
+  color: #006378;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt .input-field .prefix.active {
+  color: #0083B0;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt button {
+  display: block;
+  margin: 3% auto;
+  padding: 10px 30px 30px 30px;
+  border-radius: 20px;
+  background-color: #006378;
+  color: whitesmoke;
+}
+
+body .fluidKontakt .contKontakt form .rowKontakt .colKontakt button:hover {
+  background-color: #0083B0;
+}
+
+/* Ovde krecem footer bebi */
+
+body footer {
+  width: 100% !important;
+  background: #0083B0;
+  padding: 3% 0% 0.2% 0%;
+}
+
+body footer .fluidFooter .contFooter .rowFooter{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body footer .fluidFooter .contFooter .rowFooter .colFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+@media (max-width: 992px){
+  body footer .fluidFooter .contFooter .rowFooter .colFooter:first-child{
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+
+  body footer .fluidFooter .contFooter .rowFooter .colFooter:last-child{
+    margin: 1% 0% 2% 0%;
+  }
+}
+
+/*body footer .fluidFooter .contFooter .rowFooter .colFooter .logoFooter {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+*/
+/*@media (max-width: 992px) {
+  body footer .fluidFooter .contFooter .rowFooter .colFooter .logoFooter {
+    margin-bottom: 3%;
+  }
+}
+
+body footer .fluidFooter .contFooter .rowFooter .colFooter .logoFooter img {
+  width: 130px;
+  max-width: 100%;
+  height: auto;
+}*/
+
+body footer .fluidFooter .contFooter .rowFooter .colFooter1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body footer .fluidFooter .contFooter .rowFooter .colFooter1 h4 {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+body footer .fluidFooter .contFooter .rowFooter .colFooter1 .navFooter {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body footer .fluidFooter .contFooter .rowFooter .colFooter1 .navFooter ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body footer .fluidFooter .contFooter .rowFooter .colFooter1 .navFooter ul li {
+  margin: 4% 0%;
+}
+
+body footer .fluidFooter .contFooter .rowFooter .colFooter1 .navFooter ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1.2em;
+}
+
+body footer .fluidFooter .copyRight {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2%;
+}
+
+body footer .fluidFooter .copyRight p {
+  font-size: 1.2em;
+  color: whitesmoke;
+}
+
+body footer .fluidFooter .copyRight p label {
+  font-weight: bold;
+  font-size: 1em;
+  color: whitesmoke;
+}
+
+/* STRANICA ZA USLUGE */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+body .usNav ul .telefon a{
+   background-color: #007bff;
+   color:whitesmoke;
+}
+body .usNav {
+  max-width: 100%;
+  background-color: #0083B0;
+  position: relative;
+}
+
+body .contSlider {
+  padding-top: 5%;
+}
+
+
+
+body .contSlider .rowSlider .colSlider .slider .indicators .indicator-item:hover {
+  background-color: #00738C !important;
+}
+
+body .contSlider .rowSlider .colSlider .slider .indicators .active {
+  background-color: #00738C !important;
+}
+
+body .contSlider .rowSlider .colSlider .slider .slides li .caption .colHead, body .contSlider .rowSlider .colSlider .slider .slides li .caption .colSlogan {
+  color: #0083B0;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+body .contMainUsluge {
+  margin: 5% auto 5% auto;
+}
+
+
+
+body .contMainUsluge .rowMainUsluge .colMainUsluge h1 {
+  color: #006378;
+}
+
+body .contMainUsluge .rowMainUsluge .colMainUsluge h2 {
+  color: #006378;
+}
+
+@media (max-width: 480px) {
+  body .contMainUsluge .rowMainUsluge .colMainUsluge h2 {
+    font-size: 1.3em;
+  }
+}
+
+body .contMainUsluge .rowMainUsluge .colMainUsluge h2 label {
+  font-size: 1em;
+  color: #006378;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #006378;
+}
+
+body {
+  width: 100%;
+}
+
+body .contUs {
+  width: 100%;
+  margin-top:5%;
+}
+
+::-webkit-scrollbar{
+  width: 13px;
+  background-color: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background-color: #2de1e7;
+}
+
+::-webkit-scrollbar-track{
+  -webkit-box-shadow: 0 0 3px black;
+          box-shadow: 0 0 3px black;
+}
+
+::-moz-selection {
+  color: rgb(235, 235, 235);
+  background: rgb(40, 201, 241);
+}
+
+::selection {
+  color: rgb(235, 235, 235);
+  background: rgb(40, 201, 241);
+}
+
+body .contUs .rowUs .colUs .akord .kard{
+  background-color: #0083B0;
+  text-decoration: none;
+}
+
+body .contUs .rowUs .colUs .akord .kard .kolaps{
+  background: #93c9de;
+}
+
+body .contUs .rowUs .colUs .akord .kard .kolaps p{
+  text-align: justify;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+body .contUs .rowUs .colUs .akord .kard .kolaps ul{
+  margin-left: 2%;
+  font-weight: bold;
+}
+
+body .contUs .rowUs .colUs .akord .kard .glava{
+  padding: 0px !important;
+  padding-top: 0px !important;
+  margin: 0px;
+  text-decoration: none;
+  background-color: #0083B0;
+}
+
+body .contUs .rowUs .colUs .akord .kard .glava button{
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  background-color: #0083B0;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+body .contUs .rowUs .colUs .akord .kard .glava button i {
+  margin-right: 1%;
+  font-size: 1.3em;
+}
+
+body .contUs .rowUs .colUs .akord .kard .glava button:hover{
+  background: none;
+  text-decoration: none;
+}
+
+/*body .contUs .rowUs .colUs details {
+  background-color: rgb(6, 231, 247);
+  -webkit-transition: 1s;
+  transition: 1s;
+  color: whitesmoke;
+}
+
+body .contUs .rowUs .colUs details p {
+  padding: 3%;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #000;
+}
+
+body .contUs .rowUs .colUs details ul li p {
+  padding: 0.5% 0% 2% 5%;
+}
+
+body .contUs .rowUs .colUs details summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  font-weight: bold;
+  padding: 1% 0%;
+  background-color: #0083B0;
+}
+
+body .contUs .rowUs .colUs details summary i {
+  margin-right: 1.5%;
+  margin-left: 1%;
+}
+
+body .contUs .rowUs .colUs details summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] summary ~ * {
+  -webkit-animation-name: invisiblyGrowFontSize, fadeIn;
+          animation-name: invisiblyGrowFontSize, fadeIn;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+}
+
+@-webkit-keyframes invisiblyGrowFontSize {
+  0% {
+    font-size: 0;
+    opacity: 0;
+  }
+  100% {
+    font-size: 1em;
+    opacity: 0;
+  }
+}
+
+@keyframes invisiblyGrowFontSize {
+  0% {
+    font-size: 0;
+    opacity: 0;
+  }
+  100% {
+    font-size: 1em;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+*/

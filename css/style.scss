@@ -1,0 +1,1174 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    scroll-behavior: smooth;
+    max-width: 100%;
+}
+
+/* Promenljive za  flex */
+
+$f: flex;
+$sa: space-around;
+$sb: space-between;
+$c: center;
+$co: column;
+
+/* Kraj promenljivih za flex */
+
+/* Promenljive za responsive */
+
+$d1: 1200px;
+$d2: 992px;
+$d3: 768px;
+$d4: 576px;
+$d5: 480px;
+$d6: 380px;
+
+@mixin d1 {
+    @media (max-width: #{$d1}){
+        @content;
+    }
+}
+
+
+@mixin d2 {
+    @media (max-width: #{$d2}){
+        @content;
+    }
+}
+
+@mixin d3 {
+    @media (max-width: #{$d3}){
+        @content;
+    }
+}
+
+@mixin d4 {
+    @media (max-width: #{$d4}){
+        @content;
+    }
+}
+
+@mixin d5 {
+    @media (max-width: #{$d5}){
+        @content;
+    }
+}
+
+@mixin d6 {
+    @media (max-width: #{$d6}){
+        @content;
+    }
+}
+
+/* Stilizovanje strelice za back to top */
+
+.arrowUp{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    z-index: 999;
+    bottom: 1.5%;
+    right: 1.5%;
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+
+    a{
+        text-decoration: none;
+        color: rgb(92, 185, 221);
+        width: 100%;
+        height: 100%;
+        display: $f;
+        justify-content: $c;
+        align-items: $c;
+        transition: 1s;
+
+        &:hover{
+            transform: translateY(-10px);
+            color: aqua;
+        }
+
+        i{
+            font-weight: bold;
+            font-size: 3em;
+        }
+    }
+}
+
+/*Stilizujem ikonicu za telefon na malim ekranima */
+
+body{
+
+    .callMeNow{
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        z-index: 999;
+        right: 5%;
+        top: 5%;
+        display: $f;
+        justify-content: $c;
+        align-items: $c;
+        display: none;
+
+        @include d2{
+            display: block;
+        }
+
+        a{
+            width: 100%;
+            height: 100%;
+            color: rgb(66, 224, 172);
+            display: $f;
+            justify-content: $c;
+            align-items: $c;
+            transition: .6s;
+            text-decoration: none;
+
+            &:hover{
+                color: lighten(rgb(66, 224, 172), 15%);
+            }
+
+            i{
+                font-weight: bold;
+                font-size: 2.5em;
+            }
+        }
+    }
+}
+
+/* Stilizovanje navigacije */
+
+html{
+    overflow-x:hidden;
+}
+
+body{
+    overflow-x: hidden;
+    max-width: 100%;
+
+    nav{
+        max-width: 100%;
+        position: fixed;
+        top: 0px;
+        height: 130px;
+        background: transparent;
+        z-index: 999;
+        transition: .5s;
+
+        .nav1{
+
+            @include d1{
+                width: 100%;
+            }
+
+            .mainLogo{
+                height: 100%;
+                display: flex;
+                justify-content: $c;
+                align-items: $c;
+                margin-left: 2%;
+
+                @include d2{
+                    margin-left: 0px;
+                }
+
+                img{
+                    width: 100px;
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            .burgerIcon{
+                color: whitesmoke;
+                height: 100%;
+                /* Iz nekog razloga se burger meni vidi i na vecim ekranima kada mu deklarisem flex
+
+                display: $f;
+                justify-content: $c;
+                align-items: $c;
+
+                */
+
+                @include d2{
+                    display: $f;
+                justify-content: $c;
+                align-items: $c;
+                }
+            }
+
+            ul{
+                list-style-type: none;
+                height: 100%;
+                display: $f;
+                justify-content: $c;
+                align-items: $c;
+                margin-right: 2%;
+                width: 55%;
+
+                @include d1{
+                    width: 65%;
+                }
+
+                li{
+                    margin: 0% 2%;
+
+                    a{
+                        font-size: 1.15em;
+                        text-decoration: none;
+                        position: relative;
+                        transition: .7s;
+
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            width: 6px;
+                            height: 3px;
+                            background: #00B4DB;
+                            bottom: 10px;
+                            left: 15px;
+                            transition: .7s;
+                        }
+
+                        &:hover:after{
+                            width: 60%;
+                        }
+
+                        &:hover{
+                            background: none;
+                            color:#fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*Ovde sam zavrsio glavnu navigaciju, sad pocinjem sidenav */
+
+    .sidenav{
+        display: $f;
+        flex-direction: $co;
+        align-items: $c;
+        background: #0083B0;
+        padding-top: 5%;
+
+        .sideLogo{
+            width: 100%;
+            display: $f;
+            justify-content: $c;
+            align-items: $c;
+            margin-top: 15%;
+
+            img{
+                width: 100px;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        li{
+            a{
+                text-decoration: none;
+                color:#fff;
+            }
+        }
+        
+    }
+}
+
+/* Kraj navigacije */
+
+/* Ovde krecem da pravim main deo sa 100vh */
+
+body{
+
+    main{
+        width: 100%;
+        height: 100vh;
+        background-image: url('../images/cover.jpeg');
+        background-position: $c;
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+
+        .fading{
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 131, 176, 0.8);
+            display: $f;
+            justify-content: $c;
+            align-items: $c;
+
+            .contMain{
+                display: $f;
+                justify-content: $c;
+                align-items: $c;
+                flex-direction: $co;
+                text-align: $c;
+
+                .rowMain{
+
+                    .colMain{
+
+                        h1{
+                            color: whitesmoke;
+                            font-size: 3.5em;
+
+                            @include d5{
+                                font-size: 2.5em;
+                            }
+                        }
+
+                        h2{
+                            color: whitesmoke;
+                            padding: 3% 0%;
+
+                            @include d5{
+                                font-size: 1.5em;
+                            }
+                        }
+
+                        p{
+                            color: whitesmoke;
+                            font-size: 1.4em;
+                            padding-bottom: 4%;
+                            
+                            @include d5{
+                                font-size: 1.2em;
+                            }
+
+                            span{
+                                color: #8CD6AB;
+                                font-weight: bold;
+                            }
+                        }
+
+                        .up{  
+                            color: whitesmoke;
+                            transition: 0.7s;
+                            border-radius:20px;
+                            width: 50%;
+                            padding: 2% 0%;
+                            background: rgb(62, 206, 231);
+                            border: 3px solid whitesmoke;
+
+                            @include d5{
+                                width: 60%;
+                            }
+
+                            a{
+                                text-decoration: none;
+                                color: whitesmoke;
+                                font-weight: bold;
+                            }
+                            
+                            &:hover,
+                            &:focus { 
+                              border-color: whitesmoke;
+                              color: #fff;
+                              box-shadow: inset 0 -3.25em 0 0 #00B4DB;
+                            }
+                          }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Ovde pocinjem O Nama sekciju */
+
+body{
+
+    .onamaFluid{
+        background: linear-gradient(top, #00B4DB, #0083B0);
+        padding: 5% 0%;
+
+        .contOnama{
+            
+            h2{
+                text-align: $c;
+                color: whitesmoke;
+                padding-bottom: 4%;
+                font-size: 2.5em;
+            }
+
+            p{
+                color: whitesmoke;
+                font-size: 1.2em;
+                text-align: $c;
+
+                @include d5{
+                    font-size: 1em;
+                    font-weight: bold;
+                    text-align: $c;
+                }
+            }
+        }
+    }
+}
+
+/*Ovo je kraj O Nama dela, krecem  usluge */
+
+body{
+
+    .usluge{
+        padding: 5% 0%;
+
+        h3{
+            text-align: $c;
+            color: #006378;
+            font-size: 2.5em;
+
+            label{
+                font-size: 1em;
+                color: #006378;
+                border-bottom: 3px solid #006378;
+                padding-bottom: .5%;
+            }
+        }
+
+        .contUsluge{
+            margin-top: 4%;
+
+            .rowUsluge{
+
+                @include d2{
+                    margin-bottom: 0px;
+                }
+
+                .colUsluge{
+                    display: $f;
+                    flex-direction: $co;
+                    justify-content: $c;
+                    align-items: $c;
+
+                    @include d2{
+                        margin: 10px auto;
+                    }
+
+                    .ikonica{
+                        margin-bottom: 3%;
+                    }
+
+                    .textUsluge{
+                        text-align: $c;
+                        padding-bottom:3%;
+                        h4{
+                            color:#0083B0;
+                        }
+                        .down{
+                            padding-bottom:10px;
+                        }
+                        .up{  
+                            color: whitesmoke;
+                            transition: 0.7s;
+                            border-radius:20px;
+                            width: 50%;
+                            padding: 2% 0%;
+                            background: #0083B0;
+                            border: 3px solid whitesmoke;
+
+                            @include d5{
+                                width: 60%;
+                            }
+
+                            a{
+                                text-decoration: none;
+                                color: whitesmoke;
+                                font-weight: bold;
+                            }
+                            
+                            &:hover,
+                            &:focus { 
+                              border-color: whitesmoke;
+                              color: #fff;
+                              box-shadow: inset 0 -3.25em 0 0 #00B4DB;
+                            }
+                          }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Ovde zavrsavam usluge i pocinjem Zasto Bas Mi */
+
+body{
+
+    .fluidZasto{
+        background: linear-gradient(top, #00B4DB, #0083B0);
+        padding: 5% 0%;
+        /*background: linear-gradient(to bottom, #2193b0, #6dd5ed);*/
+
+        h3{
+            text-align: $c;
+            color: whitesmoke;
+            font-size: 2.5em;
+
+            label{
+                font-size: 1em;
+                color: whitesmoke;
+                border-bottom: 3px solid whitesmoke;
+                padding-bottom: .5%;
+            }
+        }
+
+        .contZasto{
+            margin: 4% auto;
+
+            .rowZasto{
+
+                .colZasto{
+                    display: $f;
+                    justify-content: $c;
+                    align-items: $c;
+                }
+
+                .colZasto:first-child{
+                    border-bottom: 2px solid whitesmoke;
+                    margin-bottom: 2%;
+
+                    @include d2{
+                        border: none;
+                        border-bottom: 2px solid whitesmoke;
+                        margin-bottom: 3%;
+                    }
+                }
+
+
+                p{
+                    text-align: $c;
+                    color: whitesmoke;
+                    font-size:1.3em;
+
+                    @include d4{
+                        font-size: 1.1em;
+                    }
+
+                    label{
+                        font-weight: bold;
+                        font-size:1em;
+                        color:whitesmoke;
+                    }
+                }
+
+                .zastoPar{
+                    padding-top: 5%;
+                    font-weight: bold;
+
+                    @include d4{
+                        font-size: .9em;
+                        line-height: 25px;
+                    }
+                }
+
+            }
+        }
+
+        .up{  
+            color: whitesmoke;
+            transition: 0.5s;
+            background: transparent;
+            border: 3px solid whitesmoke;
+            border-radius:20px;
+            display: block;
+            margin: 0% auto;
+            width: 20%;
+            padding: 1% 0%;
+
+            @include d4{
+                width: 30%;
+            }
+
+            @include d5{
+                width: 45%;
+            }
+
+            a{
+                text-decoration: none;
+                color: whitesmoke;
+                font-weight: bold;
+            }
+            
+            &:hover,
+            &:focus { 
+              border-color: whitesmoke;
+              color: #fff;
+              box-shadow: inset 0 -3.25em 0 0 #00B4DB;
+            }
+          }
+    }
+}
+
+/* Ovde zavrsavam Zasto Bas Mi, pocinjem formu */
+
+/*STA KAZU O NAMA*/
+body{
+    .contTestimonial{
+        .rowTestimonial{
+            h3{
+                text-align: $c;
+                color: #006378;
+                font-size: 2.5em;
+                margin-top:5% !important;
+    
+                label{
+                    font-size: 1em;
+                    color: #006378;
+                    border-bottom: 3px solid #006378;
+                    padding-bottom: .5%;
+                }
+            }
+            .colTestimonial{
+                margin:5% 0% 5% 0%;
+                .owl{
+                    text-align:center;
+                    .item{
+                        width: 80%;
+                        margin:0 auto;
+                        margin-bottom:40px;
+                        h4{
+                            color:#006378;
+                        }
+                        blockquote {
+                            border-left: 2px solid #006378;
+                            margin: 1.5em 10px;
+                            padding: 0.5em 10px;
+                            
+                          }
+                          blockquote:before {
+                            color: #006378;
+                            content: open-quote;
+                            font-size: 4em;
+                            line-height: 0.1em;
+                            margin-right: 0.25em;
+                            vertical-align: -0.4em;
+                          }
+                          blockquote p {
+                            display: inline;
+                            font-size:1.3em;
+
+                            @include d5{
+                                font-size: 1.1em;
+                            }
+                          }
+                    }
+                    .owl-nav{
+                        display:none;
+                    }
+                }
+            }
+        }
+    }
+}
+/*STA KAZU O NAMA END*/
+/*POVERENJE SU NAM POKLONILI*/
+body{
+    .contPoverenje{
+        background: linear-gradient(top, #00B4DB, #0083B0);
+
+        .rowPoverenje{
+            display: $f;
+            justify-content: $c;
+            align-items: $c;
+            flex-direction: $co;
+
+            h3{
+                color:whitesmoke;
+                text-align: $c;
+                
+
+                @include d5{
+                    font-size: 2em;
+                }
+
+                label{
+                    color:whitesmoke;
+                    border-bottom:3px solid whitesmoke;
+
+                    @include d6{
+                        padding-bottom: 3%;
+                    }
+                }
+            }
+
+            p{
+                text-align: $c;
+                color: whitesmoke;
+                font-weight: bold;
+                font-size: 1.3em;
+                text-transform: capitalize;
+            }
+
+            .colPoverenje{
+
+                .owl{
+                    
+                    .item{
+
+                        figure{
+                            max-width: 100%;
+
+                            img{
+                                width: 200px;
+                                margin: 0px auto;
+                                max-width: 100%;
+                                height: auto;
+                            }
+                        }
+
+                        h4{
+                            color:whitesmoke;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+/*POVERENJE SU NAM POKLONILI END*/
+/*NASI PARTNERI*/
+body{
+    max-width: 100%;
+    .contPartneri{
+        
+        .rowPartneri{
+            
+            .colPartneri{
+
+                .owl{
+
+                    .item{
+
+                        figure{
+                            display: flex;
+                            justify-content: center;
+                            align-items: $c;
+                            img{
+                                width:30%;
+                            }
+                            .bigOne{
+                                height:120px;
+                                width:120px;
+                            }
+                            .bigOneNew{
+                                height:120px;
+                                width:200px;
+                            }
+                            .blurOne{
+                                width:250px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+/*NASI PARTNERI END*/
+  /* Stilizovanje Kontakta */
+
+  body{
+
+        .fluidKontakt{
+            padding: 5% 0%;
+            
+
+            h3{
+                text-align: $c;
+                color: #006378;
+                font-size: 2.5em;
+                margin-bottom:4%;
+    
+                label{
+                    font-size: 1em;
+                    color: #006378;
+                    border-bottom: 2px solid #006378;
+                    padding-bottom: .5%;
+                }
+            }
+
+            .contKontakt{
+
+                form{
+
+                    @include d4{
+                        width: 100%;
+                    }
+
+                    .rowKontakt{
+
+                        @include d3{
+                            display: $f;
+                            flex-direction: $co;
+                        }
+
+                        .colKontakt{
+
+
+
+
+                            /*Menjanje boja forme i button-a*/
+
+                            /*Label color*/
+                            .input-field label {
+                                color: #00738C;
+                                font-weight: 600;
+                            }
+                            /*Label focus color text*/
+                            .input-field input[type=text]:focus + label {
+                                color: #0083B0;
+                            }
+                            /*color text underline*/
+                            .input-field input[type=text] {
+                                border-bottom: 1px solid #00738C;
+                                box-shadow: 0 1px 0 0 #00738C;
+                            }
+                            /*focus color text underline*/
+                            .input-field input[type=text]:focus {
+                                border-bottom: 1px solid #0083B0;
+                                box-shadow: 0 1px 0 0 #0083B0;
+                            }
+                            /*Valid text color*/
+                            .input-field input[type=text].valid {
+                                border-bottom: 1px solid #8CD6AB;
+                                box-shadow: 0 1px 0 0 #8CD6AB;
+                            }
+                            /* invalid color text*/
+                            .input-field input[type=text].invalid {
+                                border-bottom: 1px solid #006378;
+                                box-shadow: 0 1px 0 0 #006378;
+                            }
+                            /*Label focus color telefon*/
+                            .input-field input[type=tel]:focus + label {
+                                color: #0083B0;
+                            }
+                            /*color tel underline*/
+                            .input-field input[type=tel] {
+                                border-bottom: 1px solid #006378;
+                                box-shadow: 0 1px 0 0 #006378;
+                            }
+                            /*focus color telefon underline*/
+                            .input-field input[type=tel]:focus {
+                                border-bottom: 1px solid #0083B0;
+                                box-shadow: 0 1px 0 0 #0083B0;
+                            }
+                            /*Valid telefon color*/
+                            .input-field input[type=tel].valid {
+                                border-bottom: 1px solid #8CD6AB;
+                                box-shadow: 0 1px 0 0 #8CD6AB;
+                            }
+                            /* invalid color telefon*/
+                            .input-field input[type=tel].invalid {
+                                border-bottom: 1px solid #006378;
+                                box-shadow: 0 1px 0 0 #006378;
+                            }
+                            /*Label focus color email*/
+                            .input-field input[type=email]:focus + label {
+                                color: #0083B0;
+                            }
+                            /*color email underline*/
+                            .input-field input[type=email] {
+                                border-bottom: 1px solid #006378;
+                                box-shadow: 0 1px 0 0 #006378;
+                            }
+                            /*focus color email underline*/
+                            .input-field input[type=email]:focus {
+                                border-bottom: 1px solid #0083B0;
+                                box-shadow: 0 1px 0 0 #0083B0;
+                            }
+                            /*Valid email color*/
+                            .input-field input[type=email].valid {
+                                border-bottom: 1px solid #8CD6AB;
+                                box-shadow: 0 1px 0 0 #8CD6AB;
+                            }
+                            /* invalid color email*/
+                            .input-field input[type=email].invalid {
+                                border-bottom: 1px solid #006378;
+                                box-shadow: 0 1px 0 0 #006378;
+                            }
+                            /*textarea*/
+                            /*focus color textarea underline*/
+                            .input-field textarea:focus {
+                                border-bottom: 1px solid #0083B0;
+                                box-shadow: 0 1px 0 0 #0083B0;
+                            }
+                            .input-field textarea {
+                                border-bottom: 1px solid #006378;
+                                box-shadow: 0 1px 0 0 #006378;
+                            }
+                            /*Label focus color textarea*/
+                            .input-field textarea:focus + label {
+                                color: #0083B0;
+                            }
+                            /*icon color*/
+                            .input-field .prefix {
+                                color: #006378;
+                            }
+                            /*icon focus color*/
+                            .input-field .prefix.active {
+                                color: #0083B0;
+                            }
+                            
+                            button{
+                                display: block;
+                                margin: 3% auto;
+                                padding:10px 30px 30px 30px;
+                                border-radius:20px;
+                                background-color:#006378;
+                                color:whitesmoke; 
+                              &:hover{
+                                background-color:#0083B0; 
+                              }   
+                            }
+                        }
+                    }
+                }
+            }
+        }
+  }
+
+  /* Ovde krecem footer bebi */
+
+  body{
+
+    footer{
+        background: #0083B0;
+        padding: 3% 0% 0.2% 0%;
+
+        .fluidFooter{
+            
+            .contFooter{
+
+                .rowFooter{
+
+                    .colFooter{
+                        display: $f;
+                        justify-content: $c;
+                        align-items: $c;
+
+                        .logoFooter{
+                            width: 100%;
+                            display: $f;
+                            justify-content: $c;
+                            align-items: $c;
+
+                            @include d2{
+                                margin-bottom: 3%;
+                            }
+
+                            img{
+                                width: 130px;
+                                max-width: 100%;
+                                height: auto;
+                            }
+                        }
+                    }
+
+                    .colFooter1{
+                        display: $f;
+                        justify-content: $c;
+                        align-items: $c;
+
+                        h4{
+                            font-size: 1.4em;
+                            font-weight: bold;
+                            color:whitesmoke;
+                        }
+
+                        .navFooter{
+                            width: 100%;
+                            display: $f;
+                            justify-content: $c;
+                            align-items: $c;
+                            flex-direction: $co;
+
+                            ul{
+                                display: $f;
+                                justify-content: $c;
+                                align-items: $c;
+                                flex-direction: $co;
+
+                                li{
+                                    margin: 4% 0%;
+
+                                    a{
+                                        text-decoration: none;
+                                        color: whitesmoke;
+                                        font-size: 1.2em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .copyRight{
+                text-align: $c;
+                margin-top: 2%;
+
+                p{
+                    font-size: 1.2em;
+                    color: whitesmoke;
+                    label{
+                        font-weight: bold;
+                        font-size: 1em;
+                        color:whitesmoke;
+                    }
+                }
+            }
+        }
+    }
+  }
+
+
+  /* STRANICA ZA USLUGE */
+
+  html{
+      overflow-x: hidden;
+  }
+
+  body{
+    overflow-x: hidden;
+    max-width: 100%;
+
+    .usNav{
+        max-width: 100%;
+        background-color: #0083B0;
+    }
+  }
+
+  body{
+      
+      .contMainUsluge{
+          margin: 20% auto 15% auto;
+
+          @include d3{
+              margin: 30% auto 15% auto;
+          }
+
+          @include d4{
+              margin: 40% auto 15% auto;
+          }
+
+          @include d6{
+              margin-top: 50%;
+          }
+
+          .rowMainUsluge{
+
+              .colMainUsluge{
+
+                  h1{
+                      color:#006378;
+                  }
+
+                  h2{
+                      color:#006378;
+
+                      @include d5{
+                          font-size: 1.3em;
+                      }
+
+                      label{
+                          font-size:1em;
+                          color:#006378;
+                          padding-bottom:5px;
+                          border-bottom:2px solid #006378;
+                      }
+                  }
+              }
+          }
+      }
+  }
+
+  body{
+      width: 100%;
+
+    .contUs{
+        width: 100%;
+
+
+        .rowUs{
+            
+            .colUs{
+
+                details{
+                    background: rgb(38, 180, 180);;
+                    transition: 1s;
+                    color: whitesmoke;
+
+                    p{
+                        padding: 3%;
+                        font-weight: bold;
+                        font-size: 1.1em;
+                    }
+                    ul{
+                        li{
+                            p{
+                                padding:0.5% 0% 2% 5%;
+                            }
+                        }
+                    }
+                    
+
+                    summary{
+                        display: $f;
+                        align-items: $c;
+                        transition: 1s;
+                        font-weight: bold;
+                        padding: 1% 0%;
+
+                        i{
+                            margin-right: 1.5%;
+                            margin-left: 1%;
+                        }
+
+                        &::-webkit-details-marker{
+                            display: none;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+  }
+
+  details[open] summary ~ * {
+	animation-name: invisiblyGrowFontSize, fadeIn;
+    animation-duration: .2s;
+}
+  
+@keyframes invisiblyGrowFontSize {
+	0% {
+    font-size: 0;
+    opacity: 0;
+	}
+	100% {
+    font-size: 1em;
+    opacity: 0;
+	}
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+      100% {
+          opacity: 1;
+      }
+  }
+
+
