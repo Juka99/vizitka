@@ -474,6 +474,16 @@ body main .fading .contMain .rowMain .colMain .holdVisit img{
   animation: mover 12s infinite;
 }
 
+@media (max-width: 576px){
+  body main .fading .contMain .rowMain .colMain .holdVisit{
+    margin-top: 35%;
+    margin-bottom: 10%;
+  }
+  body main .fading .contMain .rowMain .colMain .holdVisit img{
+    width: 250px;
+  }
+}
+
 @media (max-width: 480px) {
   body main .fading .contMain .rowMain .colMain .up {
     width: 60%;
